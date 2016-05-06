@@ -7,6 +7,11 @@
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
 // entirely and just use numbers.
+
+//All of the unique physical/logical layout mapping happens in phantom.h. That's also where you need to adjust if you want
+// to utilize any advanced features like 7bit layout, split shift, or multiple keys in place of spacebar.
+//This should match the **physical** layout of the keyboard with no regard for unused keyswitch positions that need to be skipped.
+// They are ignored via phantom.h.
 #define _BW 0
 #define _MV 1
 
