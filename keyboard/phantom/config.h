@@ -39,13 +39,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define ROWS (int []){ B5, B4, B3, B2, B1, B0 }
 
 /* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION COL2ROW
+#define DIODE_DIRECTION ROW2COL
 
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
 
 /* number of backlight levels */
-#define BACKLIGHT_LEVELS 5
+//#define BACKLIGHT_LEVELS 5
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE    5
