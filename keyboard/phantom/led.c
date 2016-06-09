@@ -1,4 +1,4 @@
-        /*
+/*
 Copyright 2012 Jun Wako <wakojun@gmail.com>
 
 This program is free software: you can redistribute it and/or modify
@@ -18,27 +18,33 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <avr/io.h>
 #include "stdint.h"
 #include "led.h"
-#include "phantom.h"
 
 
 void led_set(uint8_t usb_led)
 {
-    if (usb_led & (1<<USB_LED_CAPS_LOCK)) {
-        // output low
+    if (usb_led & (1<<USB_LED_CAPS_LOCK))
+    {
+    //     // Output high.
         DDRB |= (1<<6);
         PORTB |= (1<<6);
-    } else {
-        // Hi-Z
-        DDRB |= (1<<6);
+    }
+    else
+    {
+    //     // Output low.
+        DDRB &= ~(1<<6);
         PORTB &= ~(1<<6);
     }
-	/*if (usb_led & (1<<USB_LED_SCROLL_LOCK)) {
-        // output low
-        //DDRB |= (1<<7);
-        //PORTB |= (1<<7);
-    } else {
-        // Hi-Z
-        //DDRB |= (1<<7);
-        //PORTB &= ~(1<<7);
-    }*/
+	if (usb_led & (1<<USB_LED_SCROLL_LOCK))
+    {
+    //     // Output high.
+        DDRB |= (1<<7);
+        PORTB |= (1<<7);
+    }
+    else
+    {
+    //     // Output low.
+        DDRB &= ~(1<<7);
+        PORTB &= ~(1<<7);
+    }
 }
+

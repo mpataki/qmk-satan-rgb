@@ -61,10 +61,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 )
 
 /* ws2812 RGB LED */
-#define ws2812_PORTREG  PORTB
-#define ws2812_DDRREG   DDRB
-#define ws2812_pin PB7
-#define RGBLED_NUM 10     // Number of LEDs
+#define ws2812_PORTREG  PORTE
+#define ws2812_DDRREG   DDRE
+#define ws2812_pin PE2
+#define RGBLED_NUM 20     // Number of LEDs
 #ifndef RGBLIGHT_HUE_STEP
 #define RGBLIGHT_HUE_STEP 10
 #endif
