@@ -28,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |-----------------------------------------------------------|		 ,----.
    * |Shift   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift     |		 | Up |
    * |-----------------------------------------------------------|	 ,-------------.
-   * |Ctrl|Gui |Alt |      Space            |_MV |ALT |GUI |CTRL |	 |Lft| Dn |Rig |
+   * |Ctrl|Gui |Alt |      Space            |ALT |GUI |_MV |CTRL |	 |Lft| Dn |Rig |
    * `-----------------------------------------------------------'	 `-------------'
    */
 [_BW] = KEYMAP(
@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS, KC_DELETE, KC_END, KC_PGDN, \
   KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,  \
   KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, \
-  KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, F(9), KC_RALT, KC_RGUI, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT),
+  KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, KC_RALT, KC_RGUI, F(9), KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT),
   /* Keymap 1: _MV Layer
    * ,-----------------------------------------------------------------------------.
    * |     |  |   |   |   |  |   |   |   |   |   |   |   |   |   |	|    |    |    |
@@ -50,16 +50,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |-----------------------------------------------------------|		 ,----.
    * |        | F1| F2| F3| F4| F5|F6 |F7 |F8 |   |   |          |		 |    |
    * |-----------------------------------------------------------|	 ,-------------.
-   * |    |    |    |                       |_MV |    |    |     |	 |   |    |    |
+   * |    |    |    |                       |    |    |    |     |	 |   |    |    |
    * `-----------------------------------------------------------'	 `-------------'
    */
 [_MV] = KEYMAP(
-  KC_NO,  KC_NO, KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO, KC_NO, KC_NO, \
-  KC_NO,  KC_NO, KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO, KC_NO, KC_NO, RESET, BL_DEC, BL_INC, BL_TOGG, \
-  KC_NO,  KC_NO, KC_NO,  KC_NO, KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
-  KC_NO,  KC_NO, KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,   KC_NO,  KC_NO, KC_UP, KC_NO, \
-  KC_NO,  F(1), F(2), F(3), F(4), F(5), F(6), F(7), F(8), KC_NO, KC_NO, KC_NO, KC_NO, \
-  KC_NO,  KC_NO, KC_NO,  KC_NO, F(10), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO),
+  KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, \
+  KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, RESET, KC_TRNS, KC_TRNS, KC_TRNS, \
+  KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+  KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,  KC_TRNS, KC_UP, KC_TRNS, \
+  KC_TRNS,  F(1), F(2), F(3), F(4), F(5), F(6), F(7), F(8), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+  KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
 
 
 };
@@ -87,8 +87,8 @@ const uint16_t PROGMEM fn_actions[] = {
   [6]  = ACTION_FUNCTION(RGBLED_DECREASE_SAT),
   [7]  = ACTION_FUNCTION(RGBLED_INCREASE_VAL),
   [8]  = ACTION_FUNCTION(RGBLED_DECREASE_VAL),
-  [9]  = ACTION_LAYER_ON(_MV, ON_PRESS),
-  [10] = ACTION_LAYER_OFF(_MV, ON_PRESS),
+  [9]  = ACTION_LAYER_MOMENTARY(_MV),
+  //[10] = ACTION_LAYER_OFF(_MV, ON_PRESS),
   //[11] = ACTION_LAYER_TAP_KEY(_FL, KC_CAPS),
 };
 
