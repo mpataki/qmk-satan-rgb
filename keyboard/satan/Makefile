@@ -57,7 +57,7 @@ SRC = satan.c \
 ifdef KEYMAP
     SRC := keymaps/keymap_$(KEYMAP).c $(SRC)
 else
-    SRC := keymaps/keymap_yang.c $(SRC)
+    SRC := keymaps/keymap_mp.c $(SRC)
 endif
 
 CONFIG_H = config.h
