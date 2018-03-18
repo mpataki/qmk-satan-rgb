@@ -37,21 +37,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,-----------------------------------------------------------.
    * |  `| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Delete |
    * |-----------------------------------------------------------|
-   * |     |   |Up |   |Cal|Ins|   |PgUp|  |   |Psc|Slk|Pau|     |
+   * |     |   |   |   |   |   |   |PgUp|  |Pau|Mut|VoD|VoU|     |
    * |-----------------------------------------------------------|
-   * |      |Lef|Dow|Rig|   |Hom|Lef|Dow|Up |Rig|End|   |        |
+   * |      |   |   |   |   |Hom|Lef|Dow|Up |Rig|End|   |        |
    * |-----------------------------------------------------------|
-   * |        |BL-|BL |BL+|F1 |  |PgDn|   |VoD|Mut|VoU|   PgUp   |
+   * |        |BL-|BL |BL+|F1 |  |PgDn|   |   |   |   |          |
    * |-----------------------------------------------------------|
-   * |    |    |    |                        |App |Home|PgDn|End |
+   * |    |    |    |                        |    |    |    |    |
    * `-----------------------------------------------------------'
    */
 [_FL] = KEYMAP(
   KC_GRV, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,   KC_F9,     KC_F10,    KC_F11,    KC_F12,    KC_DEL,  \
-  KC_TRNS,KC_TRNS,KC_UP,  KC_TRNS,KC_CALC,KC_INS, KC_TRNS,KC_PGUP,KC_TRNS, KC_TRNS,   KC_PSCR,   KC_SLCK,   KC_PAUS,   KC_TRNS, \
-  KC_TRNS,KC_LEFT,KC_DOWN,KC_RGHT,KC_TRNS,KC_HOME,KC_LEFT,KC_DOWN,KC_UP,   KC_RGHT,   KC_END,    KC_TRNS,              KC_TRNS, \
-  KC_TRNS,        BL_DEC, BL_TOGG,BL_INC, M(0),   KC_TRNS,KC_PGDN,KC_TRNS, KC_VOLD,   KC_MUTE,   KC_VOLU,              KC_PGUP, \
-  KC_TRNS,KC_TRNS,KC_TRNS,          KC_TRNS,                               KC_APP,    KC_HOME,   KC_PGDN,              KC_END),
+  KC_TRNS,KC_TRNS,KC_TRNS,  KC_TRNS,KC_TRNS,KC_TRNS, KC_TRNS,KC_PGUP,KC_TRNS, KC_PAUS,   KC_MUTE,   KC_VOLD,   KC_VOLU,   KC_TRNS, \
+  KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_HOME,KC_LEFT,KC_DOWN,KC_UP,   KC_RGHT,   KC_END,    KC_TRNS,              KC_TRNS, \
+  KC_TRNS,        BL_DEC, BL_TOGG,BL_INC, M(0),   KC_TRNS,KC_PGDN,KC_TRNS, KC_TRNS,   KC_TRNS,   KC_TRNS,              KC_TRNS, \
+  KC_TRNS,KC_TRNS,KC_TRNS,          KC_TRNS,                               KC_TRNS,    KC_TRNS,   KC_TRNS,              KC_TRNS),
 
   /* Keymap 3: Fn1 Layer
    * ,-----------------------------------------------------------.
@@ -72,10 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_NO,  KC_LEFT,KC_DOWN,KC_RGHT,KC_NO,  KC_HOME,KC_LEFT,KC_DOWN,KC_UP,  KC_RGHT,KC_END, KC_NO,          KC_NO, \
   KC_NO,          F(1),   F(2),   F(3),   F(4),   F(5),   F(6),   F(7),   F(8),   KC_NO,  KC_NO,          KC_UP, \
   KC_NO,  KC_NO,  KC_NO,         KC_TRNS,                                         F(10),  KC_LEFT,KC_DOWN,KC_RGHT),
-
-
 };
-
 
 enum function_id {
     SHIFT_ESC,
